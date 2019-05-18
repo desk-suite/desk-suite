@@ -1,16 +1,30 @@
 {
   "name": "desk-suite",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "demo": "vue-cli-service demo",
+    "docs": "npm run docs:serve",
+    "docs:build": "vue-cli-service docs --mode build",
+    "docs:serve": "vue-cli-service docs --mode serve",
+    "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
     "test:unit": "vue-cli-service test:unit"
   },
+  "main": "dist/desk-suite.common.js",
+  "module": "dist/desk-suite.esm.js",
+  "unpkg": "dist/desk-suite.umd.min.js",
+  "files": [
+    "dist/desk-suite.common.js",
+    "dist/desk-suite.umd.min.js",
+    "dist/desk-suite.umd.js",
+    "dist/desk-suite.esm.js",
+    "src",
+    "types/index.d.ts"
+  ],
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
@@ -33,15 +47,20 @@
     "sass-loader": "^7.1.0",
     "ts-jest": "^23.0.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.5.21"
+    "vue-cli-plugin-p11n": "^0.3.0",
+    "vue-template-compiler": "^2.5.21",
+    "vue": "^2.6.10"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
+  "jsdelivr": "dist/desk-suite.umd.min.js",
   "lint-staged": {
     "*.{js,vue}": [
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "sideeffects": false,
+  "types": "types/index.d.ts"
 }
