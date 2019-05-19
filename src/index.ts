@@ -1,12 +1,12 @@
-import { VueConstructor, PluginObject } from 'vue'
+import { VueConstructor, PluginObject } from "vue";
 
 declare global {
   interface Window {
-    Vue: VueConstructor
+    Vue: VueConstructor;
   }
 }
 
-const version = '__VERSION__'
+const version = "__VERSION__";
 
 const install = (Vue: VueConstructor): void => {
   /*
@@ -15,21 +15,21 @@ const install = (Vue: VueConstructor): void => {
    */
 
   Vue.prototype.$add = (a: number, b: number): number => {
-    return a + b
-  }
+    return a + b;
+  };
 
   /*
    * NOTE:
    *  somthing implementation here ...
    */
-}
+};
 
 const plugin: PluginObject<VueConstructor> = {
   install,
   version
-}
-export default plugin
+};
+export default plugin;
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(plugin)
+if (typeof window !== "undefined" && window.Vue) {
+  window.Vue.use(plugin);
 }

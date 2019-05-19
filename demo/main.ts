@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue'
-import App from '~entry'
+import App from './Demo.vue'
 import plugin from '../src/index'
 
 Vue.use<VueConstructor>(plugin)

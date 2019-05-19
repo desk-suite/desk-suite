@@ -3,10 +3,10 @@
  *   This file is plugin stub for main.ts
  */
 
-import Vue, { VueConstructor } from 'vue'
-import plugin from './index'
+import Vue, { VueConstructor } from "vue";
+import plugin from "./index";
 
-Vue.use<VueConstructor>(plugin)
+Vue.use<VueConstructor>(plugin);
 
 /*
  * NOTE:
