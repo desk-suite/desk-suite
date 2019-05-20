@@ -10,7 +10,7 @@
     "docs:build": "vue-cli-service docs --mode build",
     "docs:serve": "vue-cli-service docs --mode serve",
     "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit --detectOpenHandles --notify --coverage --expand"
   },
   "main": "dist/desk-suite.common.js",
   "module": "dist/desk-suite.esm.js",
@@ -26,6 +26,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "firebase": "^6.0.2",
+    "firestore-simple": "^3.0.0",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
